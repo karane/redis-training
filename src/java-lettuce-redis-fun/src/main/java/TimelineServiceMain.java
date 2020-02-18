@@ -64,6 +64,8 @@ public class TimelineServiceMain {
     }
 
     private static void buildTimeline(String emailKey) throws IOException {
+        delNewsToTimeline(emailKey);
+
         List<String> followings = getFollowings(emailKey);
 
         for(String following: followings) {
@@ -146,6 +148,10 @@ public class TimelineServiceMain {
                 .collect(Collectors.toList());
 
         return timeline;
+    }
+
+    private static void delNewsToTimeline(String emailKey) throws JsonProcessingException, IOException {
+        connection.sync().del("timeline:" + emailKey);
     }
 
     private static void addNewsToTimeline(String emailKey, News news) throws JsonProcessingException, IOException {
