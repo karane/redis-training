@@ -3,7 +3,7 @@ import io.lettuce.core.api.StatefulRedisConnection;
 
 public class SimpleLettuceMain {
     public static void main(String[] args) {
-        RedisClient redisClient = RedisClient.create("redis://localhost/0");
+        RedisClient redisClient = RedisClient.create("redis://127.0.0.1");
         StatefulRedisConnection<String, String> connection = redisClient.connect();
 
         System.out.println("Connected to Redis");

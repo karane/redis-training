@@ -16,7 +16,7 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-mainClassName = 'SimpleLettuceMain'
+mainClassName = 'TimelineServiceMain'
 
 repositories {
     mavenCentral()
@@ -26,6 +26,7 @@ repositories {
 dependencies {
 
   compile group: 'io.lettuce', name: 'lettuce-core', version: '5.2.1.RELEASE'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
 
   compile 'org.slf4j:slf4j-api:1.7.25'
   compile 'org.slf4j:slf4j-jdk14:1.7.25'
